@@ -8,6 +8,10 @@ public class TipoDelito {
     public String fechaModificacion;
     public String fechaEliminacion;
 
+    public TipoDelito() {
+
+    }
+
     public TipoDelito(int id, String descripcion, String fechaCreacion, String fechaModificacion, String fechaEliminacion) {
         this.id = id;
         this.descripcion = descripcion;
