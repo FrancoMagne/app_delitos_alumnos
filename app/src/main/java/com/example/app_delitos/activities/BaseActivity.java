@@ -2,6 +2,7 @@ package com.example.app_delitos.activities;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -115,22 +116,48 @@ public class BaseActivity extends AppCompatActivity {
 
     public void loadPermissionDialog(Intent intent) {
         /** TODO: se deberia agregar un dialogo para que pregunte antes de redirigir */
-        // requestPermissionManualLauncher.launch(intent);
+        new AlertDialog.Builder(this)
+                .setTitle("Permiso denegado")
+                .setMessage("Debera aceptar el permiso de forma manual")
+                .setPositiveButton("Sí", (dialog, which) -> {
+                    // Acción al confirmar
+                    requestPermissionManualLauncher.launch(intent);
+                })
+                .setNegativeButton("No", (dialog, which) -> {
+                    dialog.dismiss(); // Cierra el diálogo sin hacer nada
+                })
+                .show();
     }
 
     public void loadPermissionDialog() {
-        /** TODO: se deberia agregar un dialogo para que pregunte antes de redirigir */
-        /*Intent intent = new Intent();
-        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        Uri uri = Uri.fromParts("package", getPackageName(), null);
-        intent.setData(uri);
-        startActivity(intent);*/
+        new AlertDialog.Builder(this)
+                .setTitle("Permiso denegado")
+                .setMessage("Debe aceptar el permiso desde los detalles de la aplicacion")
+                .setPositiveButton("Sí", (dialog, which) -> {
+                    Intent intent = new Intent();
+                    intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri = Uri.fromParts("package", getPackageName(), null);
+                    intent.setData(uri);
+                    startActivity(intent);
+                })
+                .setNegativeButton("No", (dialog, which) -> {
+                    dialog.dismiss(); // Cierra el diálogo sin hacer nada
+                })
+                .show();
     }
 
     public void dialogGPSDisabled() {
-        /** TODO: se deberia agregar un dialogo para que pregunte antes de redirigir */
-        /*Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-        startActivity(intent); */
+        new AlertDialog.Builder(this)
+                .setTitle("Importante")
+                .setMessage("Es necesario tener el GPS encendido, ¿ desea activarlo ?")
+                .setPositiveButton("Sí", (dialog, which) -> {
+                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(intent);
+                })
+                .setNegativeButton("No", (dialog, which) -> {
+                    dialog.dismiss(); // Cierra el diálogo sin hacer nada
+                })
+                .show();
     }
 
     public boolean getLocationPermission() {
