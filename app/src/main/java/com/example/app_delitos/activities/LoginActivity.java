@@ -55,6 +55,8 @@ public class LoginActivity extends BaseActivity {
                     getPrefs().saveLUserName(user.getNombre());
                     getPrefs().saveLUserEmail(user.getEmail());
 
+                    hideProgressDialog();
+
                     // Redirigir al Home
                     goActivity(MainActivity.class, true);
                 } else {

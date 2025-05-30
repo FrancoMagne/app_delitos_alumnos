@@ -2,11 +2,11 @@ package com.example.app_delitos.database.models;
 
 public class TipoDelito {
 
-    public int id;
-    public String descripcion;
-    public String fechaCreacion;
-    public String fechaModificacion;
-    public String fechaEliminacion;
+    private int id;
+    private String descripcion;
+    private String fechaCreacion;
+    private String fechaModificacion;
+    private String fechaEliminacion;
 
     public TipoDelito() {
 

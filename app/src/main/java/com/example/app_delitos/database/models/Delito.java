@@ -2,15 +2,15 @@ package com.example.app_delitos.database.models;
 
 public class Delito {
 
-    public int id;
-    public int idUsuario;
-    public String descripcion;
-    public int idTipoDelito;
-    public String latitud;
-    public String longitud;
-    public String fechaCreacion;
-    public String fechaModificacion;
-    public String fechaEliminacion;
+    private int id;
+    private int idUsuario;
+    private String descripcion;
+    private int idTipoDelito;
+    private String latitud;
+    private String longitud;
+    private String fechaCreacion;
+    private String fechaModificacion;
+    private String fechaEliminacion;
 
     public Delito() {
 

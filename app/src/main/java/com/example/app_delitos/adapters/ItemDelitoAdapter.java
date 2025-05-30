@@ -3,6 +3,7 @@ package com.example.app_delitos.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -72,6 +73,14 @@ public class ItemDelitoAdapter extends RecyclerView.Adapter<ItemDelitoAdapter.It
 
             binding.tipoDelito.setText(tipoDelito.getDescripcion());
             binding.fechaOcurrencia.setText(delito.getFechaCreacion());
+
+            binding.editarDelito.setOnClickListener(v -> {
+                Toast.makeText(binding.getRoot().getContext(), "Editar delito de " + tipoDelito.getDescripcion(), Toast.LENGTH_SHORT).show();
+            });
+
+            binding.eliminarDelito.setOnClickListener(v -> {
+                Toast.makeText(binding.getRoot().getContext(), "Eliminar delito de " + tipoDelito.getDescripcion(), Toast.LENGTH_SHORT).show();
+            });
         }
     }
 }

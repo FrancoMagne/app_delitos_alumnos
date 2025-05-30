@@ -63,8 +63,7 @@ public class mySQLiteOpenHelper extends SQLiteOpenHelper {
         // Insertar delitos por defecto
         db.execSQL("INSERT INTO delitos (id_usuario, descripcion, id_tipo_delito, latitud, longitud, fecha_creacion, fecha_modificacion, fecha_eliminacion) VALUES " +
                 "(1, 'Robo en supermercado', 1, '-22.726274360099218', '-64.32563695806367', '2025-05-30 01:20:01', null, null)," +
-                "(1, 'Asalto a mano armada', 2, '-22.727243257247956', '-64.32675075608424', '2025-05-30 01:22:00', null, null)," +
-                "(1, 'Fraude con tarjeta', 3, '-22.727243257247956', '-64.32675075608424', '2025-05-30 01:24:00', null, null)");
+                "(1, 'Asalto a mano armada', 2, '-22.727243257247956', '-64.32675075608424', '2025-05-30 01:22:00', null, null)");
     }
 
     @Override

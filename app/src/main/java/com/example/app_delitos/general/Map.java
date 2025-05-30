@@ -41,7 +41,7 @@ public class Map {
     private MapListener listener;
 
     public interface Values {
-        double DEFAULT_ZOOM = 10;
+        double DEFAULT_ZOOM = 14;
         double MAX_ZOOM = 20;
         double MIN_ZOOM = 8;
     }

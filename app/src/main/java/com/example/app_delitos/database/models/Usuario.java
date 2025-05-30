@@ -2,11 +2,11 @@ package com.example.app_delitos.database.models;
 
 public class Usuario {
 
-    public int id;
-    public String nombre;
-    public String email;
-    public String password;
-    public String fechaCreacion;
+    private int id;
+    private String nombre;
+    private String email;
+    private String password;
+    private String fechaCreacion;
 
     public Usuario() {
 
